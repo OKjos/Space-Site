@@ -1,0 +1,204 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+
+  /* Header */
+  .header-container {
+    display: flex;
+    justify-content: center;      
+    align-items: center;          
+    gap: 20px;                       
+    margin-top: 3%;             
+  }
+  
+  .home-btn, .IMG-library, .Aurora-forecast {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    border-radius: 2rem;
+    border: 2px solid #333;
+    text-decoration: none;
+  }
+
+
+  .home-btn:hover, .IMG-library:hover, .Aurora-forecast:hover {
+    background-color: aqua;
+  }
+
+
+
+/* Pic of the day */
+.IOTD-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);  
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+  }
+  
+  .IOTD-info {
+    flex: 2;
+    min-width: 150px;
+  }
+
+  .IOTD-info p {
+    padding: 3%;
+  }
+  
+  .IOTD-description {
+    flex: 3;
+  }
+
+.IMG-day {
+    width: 90%;
+    height: 500px;
+    object-fit: cover;    
+    display: block;
+    margin: 2% auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);  
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+
+
+
+
+/* Image and Forecast*/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 50px; 
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.button-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; 
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    display: block;
+}
+
+
+
+
+/* Library */
+.library-header {
+    text-align: center;
+    margin-top: 4%;
+}
+
+#nasa-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+  }
+  #nasa-gallery img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; 
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+/* Library form search */
+.search-form-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.search-form-con input,
+.search-form-con select,
+.search-form-con button {
+  width: 180px;
+  height: 40px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.search-form-con button {
+  background-color: #005ea2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-form-con button:hover {
+  background-color: #004080;
+}
+
+/* Library Load More Button */
+.load-more-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.library-load-more-btn {
+  width: 180px;
+  height: 40px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #005ea2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Library Image enlargement */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  cursor: default;
+  transition: transform 0.3s ease;
+}

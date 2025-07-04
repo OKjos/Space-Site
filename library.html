@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Video Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header-container">
+        <a href="index.html" class="home-btn">Home</a>
+        <a href="library.html" class="IMG-library">Image Library</a>
+        <button class="Aurora-forecast">Aurora Forecast</button>
+    </header>
+
+    <h1 class="library-header">NASA Random Image Gallery</h1>
+    <form id="search-form" class="search-form-con">
+        <input type="text" id="search-input" placeholder="Search for images...">
+
+        <select id="media-type">
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+        </select>
+        <select id="preset-keyword">
+            <option value="Nebula">Nebula</option>
+            <option value="Sun">Sun</option>
+            <option value="Earth">Earth</option>
+            <option value="Galaxy">Galaxy</option>
+            <option value="Aurora">Aurora</option>
+            <option value="Mars">Mars</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+
+
+
+
+    <section id="nasa-gallery"></section>
+    <section class="load-more-wrapper">
+        <button id="load-more-btn" class="library-load-more-btn">Load More</button>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
