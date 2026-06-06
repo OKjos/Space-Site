@@ -52,58 +52,29 @@ async function fetchNasaImages(searchTerm = "nebula", mediaType = "image", page 
       if (imgUrl) {
         // Create container div for each image and caption
         const container = document.createElement('div');
-        container.style.display = "inline-block";
-        container.style.margin = "10px";
-        container.style.textAlign = "center";
-        container.style.width = "200px";
+        container.classList.add('gallery-item');
 
-        // Create the image element
         const imgEl = document.createElement('img');
         imgEl.src = imgUrl;
         imgEl.alt = title;
         imgEl.title = title;
-        imgEl.style.width = "200px";
-        imgEl.style.borderRadius = "8px";
-        imgEl.style.boxShadow = "0 2px 6px rgba(0,0,0,0.3)";
 
-        // Add a click event listener to the image element
         imgEl.onclick = () => {
-          // Create a new div element to serve as the overlay
-        const overlay = document.createElement('div');
-        // Add the CSS class that styles the overlay
-        overlay.classList.add('image-overlay');
-
-        // Create a new image element for the enlarged image inside the overlay
-        const overlayImg = document.createElement('img');
-         // Set the source of the enlarged image
-        overlayImg.src = imgEl.src;
-         // Set the alt text for accessibility
-        overlayImg.alt = imgEl.alt;
-
-        // Add the enlarged image element as a child of the overlay div
-        overlay.appendChild(overlayImg);
-
-         // Add the overlay div to the end of the body so it appears on top of everything
-        document.body.appendChild(overlay);
-
-        // Add a click event listener to the overlay itself
-        // Clicking anywhere on the overlay will remove it, closing the enlarged view
-        overlay.onclick = () => {
-          document.body.removeChild(overlay);
+          const overlay = document.createElement('div');
+          overlay.classList.add('image-overlay');
+          const overlayImg = document.createElement('img');
+          overlayImg.src = imgEl.src;
+          overlayImg.alt = imgEl.alt;
+          overlay.appendChild(overlayImg);
+          document.body.appendChild(overlay);
+          overlay.onclick = () => document.body.removeChild(overlay);
         };
-      };
 
-        // Create caption below image
         const caption = document.createElement('p');
         caption.textContent = title;
-        caption.style.fontSize = "14px";
-        caption.style.marginTop = "8px";
-        caption.style.color = "#333";
 
-        // Add image and caption to container div
         container.appendChild(imgEl);
         container.appendChild(caption);
-        // Append container to gallery section
         gallery.appendChild(container);
       }
     });
